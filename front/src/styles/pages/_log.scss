@@ -1,0 +1,92 @@
+.log-page {
+  margin: 80px auto 0;
+  max-width: 1200px;
+  img {
+    width: 50px;
+    display: flex;
+    margin: 0 auto 10px;
+  }
+  h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, $color-2 0%, $color-1 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    font-size: 36px;
+    height: 50px;
+  }
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+  .log-container {
+    width: 500px;
+    margin: auto;
+  }
+  .connection-form {
+    border: none;
+    background: white;
+    min-width: 490px;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 20px;
+    @media screen and (max-width: 550px) {
+      min-width: 200px;
+    }
+
+    .form-container {
+      ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        li {
+          cursor: pointer;
+          width: 100%;
+          padding: 10px 20px;
+          color: $black;
+          background: rgb(230 145 30 / 20%);
+          background-clip: padding-box;
+          @media screen and (max-width: 550px) {
+            width: 80%;
+            margin: 0 auto;
+          }
+        }
+        li:nth-child(1) {
+          border-radius: 20px 0 0 0;
+        }
+        li:nth-child(2) {
+          border-radius: 0 20px 0 0;
+        }
+        .active-btn {
+          background: $color-2;
+          background: linear-gradient(90deg, $color-2 0%, $color-1 100%);
+          color: $white;
+          border: 3px solid;
+        }
+        li:not(.active-btn) {
+          border: 3px solid transparent;
+          &:hover {
+            background: $white;
+            color: $color-2;
+            border: 3px solid $color-2;
+          }
+        }
+      }
+      form {
+        input {
+          padding: 14px 20px;
+          margin: 0;
+          font-size: 1.2rem;
+          font-family: $font-regular;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+}

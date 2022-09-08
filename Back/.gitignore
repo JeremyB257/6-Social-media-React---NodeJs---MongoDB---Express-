@@ -1,0 +1,12 @@
+# ignore all logs
+*.log
+# ignore file env
+.env
+# ignore files inside tmp folder
+tmp/*
+
+# ignore node_modules folder
+node_modules
+profil
+#
+.git/*
