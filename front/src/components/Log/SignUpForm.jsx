@@ -14,7 +14,7 @@ const SignUpForm = () => {
 
     axios({
       method: 'post',
-      url: 'http://localhost:3000/api/user/register',
+      url: `${process.env.PUBLIC_URL}api/user/register`,
       withCredentials: true,
       data: {
         pseudo,

@@ -17,7 +17,7 @@ const App = () => {
     const fetchToken = async () => {
       await axios({
         method: 'get',
-        url: 'http://localhost:3000/jwtid',
+        url: `${process.env.PUBLIC_URL}jwtid`,
         withCredentials: true,
       })
         .then((res) => {

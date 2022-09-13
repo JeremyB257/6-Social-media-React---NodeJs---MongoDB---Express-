@@ -11,7 +11,7 @@ const LoginForm = () => {
 
     axios({
       method: 'post',
-      url: 'http://localhost:3000/api/user/login',
+      url: `${process.env.PUBLIC_URL}api/user/login`,
       withCredentials: true,
       data: {
         email,
