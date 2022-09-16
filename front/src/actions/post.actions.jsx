@@ -23,7 +23,7 @@ export const GET_POST_ERRORS = 'GET_POST_ERRORS';
 export const getPosts = (num) => {
   return (dispatch) => {
     return axios
-      .get(`${process.env.PUBLIC_URL}api/post`)
+      .get(`${process.env.REACT_APP_PUBLIC_URL}api/post`)
       .then((res) => {
         const array = res.data.slice(0, num);
         dispatch({ type: GET_POSTS, payload: array });
@@ -37,7 +37,7 @@ export const addPost = (data) => {
   return (dispatch) => {
     return axios({
       method: 'post',
-      url: `${process.env.PUBLIC_URL}api/post`,
+      url: `${process.env.REACT_APP_PUBLIC_URL}api/post`,
       withCredentials: true,
       data: data,
     })
@@ -61,7 +61,7 @@ export const likePost = (postId, userId) => {
   return (dispatch) => {
     return axios({
       method: 'patch',
-      url: `${process.env.PUBLIC_URL}api/post/${postId}/like`,
+      url: `${process.env.REACT_APP_PUBLIC_URL}api/post/${postId}/like`,
       withCredentials: true,
       data: { id: userId, like: 1 },
     })
@@ -76,7 +76,7 @@ export const unLikePost = (postId, userId) => {
   return (dispatch) => {
     return axios({
       method: 'patch',
-      url: `${process.env.PUBLIC_URL}api/post/${postId}/like`,
+      url: `${process.env.REACT_APP_PUBLIC_URL}api/post/${postId}/like`,
       withCredentials: true,
       data: { id: userId, like: 0 },
     })
@@ -91,7 +91,7 @@ export const updatePost = (postId, message, access) => {
   return (dispatch) => {
     return axios({
       method: 'put',
-      url: `${process.env.PUBLIC_URL}api/post/${postId}`,
+      url: `${process.env.REACT_APP_PUBLIC_URL}api/post/${postId}`,
       withCredentials: true,
       data: { message, access },
     })
@@ -106,7 +106,7 @@ export const deletePost = (postId, access) => {
   return (dispatch) => {
     return axios({
       method: 'delete',
-      url: `${process.env.PUBLIC_URL}api/post/${postId}`,
+      url: `${process.env.REACT_APP_PUBLIC_URL}api/post/${postId}`,
       withCredentials: true,
       data: { access },
     })
@@ -123,7 +123,7 @@ export const addComment = (postId, commenterId, text, commenterPseudo) => {
   return (dispatch) => {
     return axios({
       method: 'patch',
-      url: `${process.env.PUBLIC_URL}api/post/${postId}/comment-post`,
+      url: `${process.env.REACT_APP_PUBLIC_URL}api/post/${postId}/comment-post`,
       withCredentials: true,
       data: { commenterId, text, commenterPseudo },
     })
@@ -138,7 +138,7 @@ export const editComment = (postId, commentId, text, access) => {
   return (dispatch) => {
     return axios({
       method: 'patch',
-      url: `${process.env.PUBLIC_URL}api/post/${postId}/edit-comment-post`,
+      url: `${process.env.REACT_APP_PUBLIC_URL}api/post/${postId}/edit-comment-post`,
       withCredentials: true,
       data: { commentId, text, access },
     })
@@ -153,7 +153,7 @@ export const deleteComment = (postId, commentId, access) => {
   return (dispatch) => {
     return axios({
       method: 'patch',
-      url: `${process.env.PUBLIC_URL}api/post/${postId}/delete-comment-post`,
+      url: `${process.env.REACT_APP_PUBLIC_URL}api/post/${postId}/delete-comment-post`,
       withCredentials: true,
       data: { commentId, access },
     })

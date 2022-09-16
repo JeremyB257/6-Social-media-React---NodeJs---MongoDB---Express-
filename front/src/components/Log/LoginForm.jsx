@@ -11,7 +11,7 @@ const LoginForm = () => {
 
     axios({
       method: 'post',
-      url: `${process.env.PUBLIC_URL}api/user/login`,
+      url: `${process.env.REACT_APP_PUBLIC_URL}api/user/login`,
       withCredentials: true,
       data: {
         email,
