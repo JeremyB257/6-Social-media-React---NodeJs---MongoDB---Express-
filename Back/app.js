@@ -6,6 +6,8 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const { requireAuth, checkUser } = require('./middleware/auth.middleware');
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 const userRoutes = require('./routes/user.routes');
@@ -22,8 +24,6 @@ mongoose
   )
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
-
-app.use(express.json());
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001');
