@@ -18,6 +18,7 @@ const userModel = require('../models/user.model');
 
 module.exports.checkUser = (req, res, next) => {
   const token = req.cookies.jwt;
+
   if (token) {
     jwt.verify(token, process.env.TOKEN, async (err, decodedToken) => {
       if (err) {
