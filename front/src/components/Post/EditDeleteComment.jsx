@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteComment, editComment } from '../../actions/post.actions';
+import { deleteComment, editComment, getPosts } from '../../actions/post.actions';
 import { UidContext } from '../AppContext';
 
 const EditDeleteComment = ({ comment, postId }) => {
@@ -15,14 +15,14 @@ const EditDeleteComment = ({ comment, postId }) => {
     e.preventDefault();
 
     if (text) {
-      dispatch(editComment(postId, comment._id, text, userData.access));
+      dispatch(editComment(postId, comment._id, text, userData.access)).then(() => dispatch(getPosts()));
       setText('');
       setEdit(false);
     }
   };
 
   const handleDelete = () => {
-    dispatch(deleteComment(postId, comment._id, userData.access));
+    dispatch(deleteComment(postId, comment._id, userData.access)).then(() => dispatch(getPosts()));
   };
 
   useEffect(() => {

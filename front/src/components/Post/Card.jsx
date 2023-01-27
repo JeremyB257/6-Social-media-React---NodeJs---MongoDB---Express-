@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updatePost } from '../../actions/post.actions';
+import { getPosts, updatePost } from '../../actions/post.actions';
 import { dateParser, isEmpty } from '../Utils';
 import CardComments from './CardComments';
 import DeleteCard from './DeleteCard';
@@ -17,7 +17,7 @@ const Card = ({ post }) => {
 
   const updateItem = async () => {
     if (textUpdate) {
-      dispatch(updatePost(post._id, textUpdate, userData.access));
+      dispatch(updatePost(post._id, textUpdate, userData.access)).then(() => dispatch(getPosts()));
     }
     setIsUpdated(false);
   };
