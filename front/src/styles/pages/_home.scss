@@ -4,6 +4,8 @@
   overflow: hidden;
   margin: 80px auto 0px;
   position: relative;
+  max-width: 1200px;
+  min-height: 100vh;
 
   @media screen and (max-width: 990px) {
     grid-template-columns: 60px 1fr;

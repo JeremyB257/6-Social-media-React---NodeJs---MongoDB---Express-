@@ -1,5 +1,6 @@
 .profil-page {
   margin: 80px auto 0;
+  max-width: 1200px;
 
   img {
     width: 175px;
@@ -90,7 +91,7 @@
           transform: translate(-3px, -50%);
           cursor: pointer;
           padding: 10px 20px;
-
+          width: 245px;
           @media screen and (max-width: 1121px) {
             opacity: 0;
           }
